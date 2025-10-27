@@ -34,15 +34,22 @@ export default function HeroSection() {
   return (
     <section className={styles.hero} onClick={handleHeroClick}>
       <video
-        src={videos[0]}
+        src="/lebrone-james.mp4"
         autoPlay
-        loop
         muted
         playsInline
-        preload="auto"
-        className={styles.heroVideo}
+        loop
         aria-hidden="true"
-        tabIndex={-1}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }}
       />
       <div className={styles.overlay} />
       <div className={`${styles.content} ${isLoaded ? styles.animateIn : ''}`}>
