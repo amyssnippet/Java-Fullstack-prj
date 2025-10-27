@@ -5,7 +5,14 @@ import EquipmentCard from './EquipmentCard';
 import ProductModal from './ProductModal';
 import styles from './EquipmentGrid.module.css';
 
-const equipmentItems = [
+interface Product {
+  image: string;
+  name: string;
+  price: string;
+  description: string;
+}
+
+const equipmentItems: Product[] = [
   { image: '/images/Nike-Football-1.png', name: 'Nike Football', price: '$25', description: 'Premium quality football for professional play.' },
   { image: '/images/Nike-Football-2.png', name: 'Nike Football Pro', price: '$30', description: 'Advanced design for superior performance.' },
   { image: '/images/Nike-Football-3.png', name: 'Nike Football Elite', price: '$35', description: 'Top-tier football for elite athletes.' },
@@ -33,9 +40,9 @@ const equipmentItems = [
 ];
 
 export default function EquipmentGrid() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const handleProductClick = (product) => {
+  const handleProductClick = (product: Product) => {
     setSelectedProduct(product);
   };
 
