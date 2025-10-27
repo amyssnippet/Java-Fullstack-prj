@@ -1,0 +1,126 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.navbar.animateIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #ccc;
+}
+
+.desktopMenu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.desktopMenu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.desktopMenu a:hover {
+  color: #ccc;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .desktopMenu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    list-style: none;
+    margin: 0;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    border-top: 1px solid #333;
+  }
+
+  .mobileMenu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+
+  .mobileMenu a:hover {
+    color: #ccc;
+  }
+}
